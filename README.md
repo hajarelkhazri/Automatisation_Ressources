@@ -1,4 +1,4 @@
-# Argocd-chainsaw-validation-hooks
+# argocd-chainsaw-validation-hooks
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/smart-ict-group21/argocd-chainsaw-validation-hooks.git
+git remote add origin https://gitlab.com/smart-ict-group2/argocd-chainsaw-validation-hooks.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/smart-ict-group21/argocd-chainsaw-validation-hooks/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/smart-ict-group2/argocd-chainsaw-validation-hooks/-/settings/integrations)
 
 ## Collaborate with your team
 

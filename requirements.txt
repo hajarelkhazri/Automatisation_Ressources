@@ -1,0 +1,8 @@
+chainsaw
+wattle
+pandas
+datacost
+numpy
+matplotlib
+scipy
+entro
