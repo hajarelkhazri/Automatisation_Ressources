@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: chainsaw-test-job
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - name: chainsaw-test
+          image: registry.gitlab.com/smart-ict-group2/argocd-chainsaw-validation-hooks:latest  # Remplace par ton image Docker
+          command: ["/bin/sh", "-c"]
+          args: ["sh", "-c", "chainsaw test /path/to/tests"]
+  # Remplace avec la commande réelle pour exécuter tes tests
+      restartPolicy: Never
