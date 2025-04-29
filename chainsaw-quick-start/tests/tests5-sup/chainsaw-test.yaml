@@ -1,0 +1,28 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: delete-providerconfig
+spec:
+  timeouts:
+    delete: 25s
+  steps:
+    - try:
+        - script:
+            content: |
+              #!/bin/bash
+              echo "Trying to delete ProviderConfig 'default'"
+              kubectl delete providerconfig.aws.upbound.io default --ignore-not-found
+---
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: delete-pod
+spec:
+  steps:
+  - try:
+    - delete:
+        ref:
+          apiVersion: v1
+          kind: Pod
+          namespace: default
+          name: my-test-pod

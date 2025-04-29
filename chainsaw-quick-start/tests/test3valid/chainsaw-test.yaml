@@ -1,0 +1,30 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: crossplane-crd-validation
+spec:
+  steps:
+  - try:
+    - assert:
+        # use a specific file
+        file: ../../crossplane/provider.yaml
+---
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: example
+spec:
+  steps:
+  - try:
+    - assert:
+        # specify resource inline
+        resource:
+          apiVersion: v1
+          kind: pod
+          metadata:
+            name: default
+          spec:
+            (replicas > 3): true
+
+  
+       

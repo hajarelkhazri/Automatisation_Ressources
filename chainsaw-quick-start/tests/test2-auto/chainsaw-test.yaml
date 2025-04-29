@@ -1,0 +1,12 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: create-provider
+spec:
+  steps:
+  - try:
+    - create:
+        # use a specific file
+        file: ../../crossplane/provider.yaml
+    - sleep:
+        duration: 30s
